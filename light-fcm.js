@@ -3,13 +3,8 @@
 var axios = require("axios");
 
 class LightFcm {
-    constructor(serverKey) {
-        if (serverKey) {
-            this.serverKey = serverKey;
-        } else {
-            throw Error('No serverKey is given.');
-        }
-    }
+
+    constructor() {};
 
     /**
      * Send data to Firebase Cloud Messaging
@@ -26,25 +21,25 @@ class LightFcm {
      * }
      * @param {json} payload 
      */
-    send(payload) {
+    send(payload, serverKey) {
         return this._sendNotification(payload);
     }
 
 
-    _buildRequest(notification) {
+    _buildRequest(notification, serverKey) {
         return {
-            url: fcmURL,
+            url: 'https://fcm.googleapis.com/fcm/send',
             method: 'post',
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `key=${this.serverKey}`
+                "Authorization": `key=${serverKey}`
             },
             data: notification
-        }
+        };
     }
 
-    _sendNotification(notification) {
-        const request = this._buildRequest(notification);
+    _sendNotification(notification, serverKey) {
+        const request = this._buildRequest(notification, serverKey);
         return axios(request);
     }
 }
