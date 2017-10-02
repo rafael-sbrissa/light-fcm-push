@@ -2,7 +2,7 @@
     "name": "light-fcm-push",
     "version": "1.0.0",
     "description": "A light lib to Firebase Cloud Messaging (FCM) for Android and iOS",
-    "main": "fcm.js",
+    "main": "light-fcm.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/rafael-sbrissa/light-fcm-push.git"
