@@ -48,3 +48,4 @@ class LightFcm {
         return axios(request);
     }
 }
+module.exports = new LightFcm();
