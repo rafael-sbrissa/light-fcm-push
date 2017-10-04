@@ -2,7 +2,7 @@
 
    A light module focused on Firebase Clud Messaging for AWS Lambda.
 
-## Use exemple
+## Use example
     var fcm = require('light-fcm-push');
     var serverKey = "your server key";
     var message = {
