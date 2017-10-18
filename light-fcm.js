@@ -22,7 +22,7 @@ class LightFcm {
      * @param {json} payload 
      */
     send(payload, serverKey) {
-        return this._sendNotification(payload);
+        return this._sendNotification(payload, serverKey);
     }
 
 
